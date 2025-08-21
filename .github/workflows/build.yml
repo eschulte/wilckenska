@@ -25,7 +25,7 @@ jobs:
 
       - run: eleventy
 
-      - run: echo -n nationalunionofthehomeless.org > _site/CNAME
+      # - run: echo -n wilckenska.net > _site/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

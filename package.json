@@ -1,0 +1,24 @@
+{
+  "name": "wilckenska",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eschulte/wilckenska.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/eschulte/wilckenska/issues"
+  },
+  "homepage": "https://github.com/eschulte/wilckenska#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
