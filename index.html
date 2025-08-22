@@ -12,7 +12,12 @@
             color: #333;
             line-height: 1.6;
             margin: 0;
-            background-color: #2f5970; /* Soft blue background */
+            background-color: #cce0ff;
+        }
+
+        .outside-container {
+            background-color: #2f5970;
+            margin: 0;
         }
 
         .container {
@@ -72,6 +77,7 @@
 
         /* Content Sections */
         .section {
+            position: relative;
             background-color: #f0f8ff; /* Lighter blue for sections */
             border-radius: 10px;
             padding: 30px;
@@ -90,7 +96,7 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #cce0ff; /* Even softer blue for footer */
+            background-color: #cce0ff;
             border-top: 1px solid #aaddff;
         }
 
@@ -104,13 +110,15 @@
 </head>
 <body>
 
-    <div class="header">
-        <h1>Dr. Kristine Wilckens PhD</h1>
-    </div>
+    <a href="./" style="text-decoration: none;">
+      <div class="header">
+          <h1>Dr. Kristine Wilckens PhD</h1>
+      </div>
+    </a>
 
-    <div class="container">
-      <div class="separator"></div>
-<div class="section">
+    <div class="outside-container">
+      <div class="container">
+        <div class="separator"></div><div class="section">
 <h2>Dr. Wilckens</h2>
 <p>Dr. Kristine Wilckens is a Pellentesque dapibus suscipit ligula.
 Donec posuere augue in quam.  Etiam vel tortor sodales tellus
@@ -125,28 +133,26 @@ Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.
 Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
 purus, et dictum nunc justo sit amet elit.</p>
 </div>
-<div class="separator"></div>
-<div class="section">
-<h2>People</h2>
-<ul>
-<li><a href="people/post-doc/">A Person</a></li>
-</ul>
-</div>
-<div class="separator"></div>
-<div class="section">
+<div class="separator"></div><div class="section">
 <h2>Projects</h2>
 <ul>
-<li><a href="projects/writing-grants/">Grants</a></li>
+<li><a href="projects/zumba/">Zuuuuuuuumba</a></li>
 </ul>
 </div>
-<div class="separator"></div>
-<div class="section">
+<div class="separator"></div><div class="section">
+<h2>People</h2>
+<ul>
+<li><strong>A Person</strong> <p>I might be a post doc, or a graduate student.</p></li>
+</ul>
+</div>
+<div class="separator"></div><div class="section">
 <h2>Publications</h2>
 <ul>
-<li><a href="publications/some-paper/">Some Paper</a></li>
+<li>Eric Schulte and Michael D. Brown and Vlad Folts <u>A Broad Comparative Evaluation of x86-64 Binary Rewriters</u> <em>Cyber Security Experimentation and Test Workshop</em> 2022</li>
 </ul>
 </div>
 
+      </div>
     </div>
 
     <div class="footer">
