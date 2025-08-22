@@ -2,9 +2,7 @@
 title: Dr. Kristine Wilckens PhD
 ---
 
-<div class="separator"></div>
-<div class="section">
-
+::: section
 ## Dr. Wilckens
 
 Dr. Kristine Wilckens is a Pellentesque dapibus suscipit ligula.
@@ -20,22 +18,8 @@ Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.
 Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
 purus, et dictum nunc justo sit amet elit.
 
-</div>
-<div class="separator"></div>
-<div class="section">
-
-## People
-
-{% for person in collections.person %}
-
-- [{{ person.data.title }}]({{ person.url }})
-
-{% endfor %}
-
-</div>
-<div class="separator"></div>
-<div class="section">
-
+:::
+::: section
 ## Projects
 
 {% for project in collections.project %}
@@ -44,16 +28,24 @@ purus, et dictum nunc justo sit amet elit.
 
 {% endfor %}
 
-</div>
-<div class="separator"></div>
-<div class="section">
+:::
+::: section
+## People
 
-## Publications
+{% for person in collections.person %}
 
-{% for publication in collections.publication %}
-
-- [{{ publication.data.title }}]({{ publication.url }})
+- **{{ person.data.title }}** {{ person.content }}
 
 {% endfor %}
 
-</div>
+:::
+::: section
+## Publications
+
+{% for pub in collections.publication %}
+
+- {{ pub.data.author }} <u>{{ pub.data.title }}</u> *{{ pub.data.publisher }}* {{ pub.data.year }}
+
+{% endfor %}
+
+:::

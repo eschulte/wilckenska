@@ -12,7 +12,12 @@
             color: #333;
             line-height: 1.6;
             margin: 0;
-            background-color: #2f5970; /* Soft blue background */
+            background-color: #cce0ff;
+        }
+
+        .outside-container {
+            background-color: #2f5970;
+            margin: 0;
         }
 
         .container {
@@ -72,6 +77,7 @@
 
         /* Content Sections */
         .section {
+            position: relative;
             background-color: #f0f8ff; /* Lighter blue for sections */
             border-radius: 10px;
             padding: 30px;
@@ -90,7 +96,7 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #cce0ff; /* Even softer blue for footer */
+            background-color: #cce0ff;
             border-top: 1px solid #aaddff;
         }
 
@@ -104,12 +110,16 @@
 </head>
 <body>
 
-    <div class="header">
-        <h1>{{ title }}</h1>
-    </div>
+    <a href="/" style="text-decoration: none;">
+      <div class="header">
+          <h1>{{ title }}</h1>
+      </div>
+    </a>
 
-    <div class="container">
-      {{ content }}
+    <div class="outside-container">
+      <div class="container">
+        {{ content }}
+      </div>
     </div>
 
     <div class="footer">
