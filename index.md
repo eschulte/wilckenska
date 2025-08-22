@@ -1,12 +1,11 @@
 ---
 title: Dr. Kristine Wilckens PhD
-layout: layout.html
 ---
 
 <div class="separator"></div>
 <div class="section">
 
-# Dr. Wilckens
+## Dr. Wilckens
 
 Dr. Kristine Wilckens is a Pellentesque dapibus suscipit ligula.
 Donec posuere augue in quam.  Etiam vel tortor sodales tellus
@@ -25,13 +24,19 @@ purus, et dictum nunc justo sit amet elit.
 <div class="separator"></div>
 <div class="section">
 
-# People
+## People
+
+{% for person in collections.person %}
+
+- [{{ person.data.title }}]({{ person.url }})
+
+{% endfor %}
 
 </div>
 <div class="separator"></div>
 <div class="section">
 
-# Projects
+## Projects
 
 {% for project in collections.project %}
 
@@ -43,6 +48,12 @@ purus, et dictum nunc justo sit amet elit.
 <div class="separator"></div>
 <div class="section">
 
-# Publications
+## Publications
+
+{% for publication in collections.publication %}
+
+- [{{ publication.data.title }}]({{ publication.url }})
+
+{% endfor %}
 
 </div>
