@@ -23,7 +23,7 @@ jobs:
 
       - run: npm install markdown-it markdown-it-anchor markdown-it-footnote
 
-      - run: eleventy
+      - run: eleventy --pathprefix wilckenska
 
       # - run: echo -n wilckenska.net > _site/CNAME
 
