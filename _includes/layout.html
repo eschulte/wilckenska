@@ -43,7 +43,7 @@
           height: 100%;
 
           /* Set the image and make it repeat/tile */
-          background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0), rgba(1, 1, 1, 0.5)), url('/img/slow-wave-grad.png');
+          background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0), rgba(1, 1, 1, 0.5)), url({{ '/img/slow-wave-grad.png' | url }});
           background-size: cover;
           background-repeat: repeat-x;
           
@@ -63,7 +63,7 @@
         .separator {
             width: 100%;
             height: 50px; /* Adjust as needed */
-            background-image: url('/img/slow-wave-top.png');
+            background-image: url({{ '/img/slow-wave-top.png' | url }});
             background-repeat: repeat-x;
             background-size: cover;
             background-position: center;
