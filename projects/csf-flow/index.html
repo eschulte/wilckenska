@@ -18,9 +18,12 @@
         .outside-container {
             background-color: #2f5970;
             margin: 0;
+            display: flex;
+            gap: 20px;
         }
 
         .container {
+            flex-grow: 1;
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
@@ -35,6 +38,7 @@
             background-position: center;
             position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -74,6 +78,28 @@
             margin: 0;
         }
 
+        .menu-bar {
+            background-color: #2f5970;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 2px solid #4a7d9b;
+            border-bottom: 2px solid #4a7d9b;
+        }
+
+        .menu-bar a {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            background-color: #4a7d9b;
+        }
+
         /* Horizontal Separator (EKG Delta Slow Wave) */
         .separator {
             width: 100%;
@@ -102,18 +128,102 @@
             margin-top: 0;
         }
 
+        .news-scroller {
+            flex-shrink: 0; /* Prevents the scroller from shrinking */
+            width: 300px; /* Fixed width for the scroller on desktop */
+            background-color: #d3e2e3;
+            margin-top: 180px;
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-height: 600px; /* Set a max height */
+            overflow-y: auto;  /* Make it scrollable if content overflows */
+        }
+
+        .news-scroller h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0a4d8c;
+            border-bottom: 2px solid #87CEEB;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .news-item {
+            margin-bottom: 20px;
+        }
+        .news-item h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        .news-item p {
+            margin: 0;
+            font-size: 0.9em;
+            font-family: 'Inter', sans-serif;
+            color: #555;
+        }
+
+        /* Photo Carousel Styles */
+        .photo-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px 0;
+            margin: 20px auto;
+            scrollbar-width: none;
+        }
+        .photo-carousel:hover {
+            scrollbar-width: thin;
+            scrollbar-color: #2f5970 #cce0ff;
+        }
+        
+        .photo-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .photo-carousel::-webkit-scrollbar:hover {
+            height: 8px;
+        }
+        
+        .photo-carousel::-webkit-scrollbar-thumb {
+            background-color: #2f5970;
+            border-radius: 10px;
+        }
+        
+        .photo-carousel::-webkit-scrollbar-track {
+            background: #cce0ff;
+        }
+
+        .photo-carousel img {
+            flex-shrink: 0;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo-carousel img:hover {
+            transform: scale(1.05);
+        }
+
         /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
             background-color: #cce0ff;
-            border-top: 1px solid #aaddff;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
+            }
+            .outside-container {
+                flex-direction: column; /* Stack the main content and scroller vertically */
+            }
+            .news-scroller {
+                width: 100%; /* Make scroller full-width on mobile */
             }
         }
     </style>
@@ -127,6 +237,12 @@
       </div>
     </a>
 
+    <nav class="menu-bar">
+        <a href="#link1">Sub-heading 1</a>
+        <a href="#link2">Sub-heading 2</a>
+        <a href="#link3">Sub-heading 3</a>
+    </nav>
+
     <div class="outside-container">
       <div class="container">
         <div class="separator"></div><div class="section">
@@ -138,20 +254,50 @@ and wakefulness in adults using a 7 Tesla MRI scanner and
 </div>
 
       </div>
+
+      
     </div>
 
+    
+
     <div class="footer">
+        <!-- TODO: Footer text. -->
         <p>Footer</p>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const h2Elements = document.querySelectorAll('h2');
+        // Get the photo carousel element
+        const carousel = document.querySelector('.photo-carousel');
+        let scrollSpeed = 3; // Adjust the scroll speed as needed
+        let scrollInterval;
+        let halfWidth;
 
-      h2Elements.forEach(h2 => {
-          const separatorDiv = document.createElement('div');
-          separatorDiv.classList.add('separator');
-          h2.parentNode.insertBefore(separatorDiv, h2);
-      });
+        // Function to start automatic scrolling
+        function startScrolling() {
+            // Get the width of the carousel's content
+            halfWidth = carousel.scrollWidth / 2;
+            scrollInterval = setInterval(() => {
+                // Check if the carousel has scrolled past the first set of images
+                if (carousel.scrollLeft >= halfWidth) {
+                    // Instantly reset the scroll position to the start of the second set
+                    carousel.scrollLeft = 0;
+                } else {
+                    // Increment the scroll position
+                    carousel.scrollLeft += scrollSpeed;
+                }
+            }, 10); // Check every 10 milliseconds
+        }
+
+        // Function to stop automatic scrolling
+        function stopScrolling() {
+            clearInterval(scrollInterval);
+        }
+
+        // Start scrolling when the page loads
+        window.addEventListener('load', startScrolling);
+
+        // Add event listeners to pause on hover and resume on mouse out
+        carousel.addEventListener('mouseenter', stopScrolling);
+        carousel.addEventListener('mouseleave', startScrolling);
     </script>
 </body>
 </html>
