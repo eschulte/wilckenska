@@ -72,10 +72,16 @@
         .header h2 {
             font-family: 'Playfair Display', serif;
             color: white;
+            background-color: transparent;
+            transition: background-color 1s ease-out, opacity 1s ease-out;
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             text-align: center;
             margin: 0;
+        }
+
+        .publications ul li {
+            list-style-type: none;
         }
 
         .menu-bar {
@@ -123,9 +129,20 @@
 
         .section h2 {
             color: #0a4d8c; /* Darker blue heading */
-            border-bottom: 2px solid #87CEEB; /* A soft blue underline */
+            border-bottom: 2px solid #87CEEB;
             padding-bottom: 10px;
             margin-top: 0;
+        }
+
+        .section h2:focus {
+            border-bottom: 2px solid #2f5970;
+            outline: none;
+        }
+
+        .right {
+            float: right;
+            margin-top: -5em;
+            padding: 1em;
         }
 
         .news-scroller {
@@ -222,8 +239,19 @@
             .outside-container {
                 flex-direction: column; /* Stack the main content and scroller vertically */
             }
+            .container {
+                margin-left: -10px;
+                margin-bottom: -20px;
+            }
             .news-scroller {
-                width: 100%; /* Make scroller full-width on mobile */
+                width: 85%;
+                margin: auto;
+                margin-bottom: 1em;
+            }
+            .right {
+                float: none;
+                margin-top: 0;
+                padding: 0;
             }
         }
     </style>
@@ -243,13 +271,7 @@
 
     <div class="outside-container">
       <div class="container">
-        <p>Dr. Miranda Chappel-Farley (she/her) is a postdoctoral scholar on the
-Translational Research Training in Sleep and Circadian Science
-T32. Her research focuses on uncovering underlying mechanisms by which
-health behaviors (i.e., sleep and physical activity) impact brain and
-cognitive function in older adulthood. The goal of this work is to
-inform and develop more targeted mechanistic interventions to prevent
-cognitive decline and Alzheimer’s disease.</p>
+        <p>Dr. Miranda Chappel-Farley (she/her) is a postdoctoral scholar on the Translational Research Training in Sleep and Circadian Science T32. Her research focuses on uncovering underlying mechanisms by which health behaviors (i.e., sleep and physical activity) impact brain and cognitive function in older adulthood. The goal of this work is to inform and develop more targeted mechanistic interventions to prevent cognitive decline and Alzheimer’s disease.</p>
 
       </div>
 
@@ -259,8 +281,11 @@ cognitive decline and Alzheimer’s disease.</p>
     
 
     <div class="footer">
-        <!-- TODO: Footer text. -->
-        <p>Footer</p>
+        <p>
+Contact: Dr. Kristine Wilckens - <a href="mailto:krw37@pitt.edu">krw37@pitt.edu</a><br>
+3811 O’Hara Street, Room E-1124<br>
+Pittsburgh, PA 15213
+</p>
     </div>
     <script>
         // Get the photo carousel element

@@ -72,10 +72,16 @@
         .header h2 {
             font-family: 'Playfair Display', serif;
             color: white;
+            background-color: transparent;
+            transition: background-color 1s ease-out, opacity 1s ease-out;
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             text-align: center;
             margin: 0;
+        }
+
+        .publications ul li {
+            list-style-type: none;
         }
 
         .menu-bar {
@@ -123,9 +129,20 @@
 
         .section h2 {
             color: #0a4d8c; /* Darker blue heading */
-            border-bottom: 2px solid #87CEEB; /* A soft blue underline */
+            border-bottom: 2px solid #87CEEB;
             padding-bottom: 10px;
             margin-top: 0;
+        }
+
+        .section h2:focus {
+            border-bottom: 2px solid #2f5970;
+            outline: none;
+        }
+
+        .right {
+            float: right;
+            margin-top: -5em;
+            padding: 1em;
         }
 
         .news-scroller {
@@ -222,8 +239,19 @@
             .outside-container {
                 flex-direction: column; /* Stack the main content and scroller vertically */
             }
+            .container {
+                margin-left: -10px;
+                margin-bottom: -20px;
+            }
             .news-scroller {
-                width: 100%; /* Make scroller full-width on mobile */
+                width: 85%;
+                margin: auto;
+                margin-bottom: 1em;
+            }
+            .right {
+                float: none;
+                margin-top: 0;
+                padding: 0;
             }
         }
     </style>
@@ -253,8 +281,8 @@
       <div class="container">
         <div class="separator"></div><div class="section">
 <h2 id="dr.-wilckens" tabindex="-1">Dr. Wilckens</h2>
-<div style="float:right;">
-<p><img src="img/WilckensKristine_Psychiatry2019.jpg" alt="Face" width="400px"></p>
+<div class="right">
+<p><img src="img/WilckensKristine_Psychiatry2019.jpg" alt="Dr. Kristine Wilckens" width="300px"></p>
 </div>
 <p>Dr. Wilckens investigates the role of sleep in promoting brain health
 and cognitive fitness. Her research program focuses on 1) neural
@@ -271,7 +299,7 @@ transcranial magnetic stimulation.</p>
 <li>PhD, Cognitive Psychology, University of Pittsburgh, 2012</li>
 <li>Postdoctoral Fellowship, Geriatric Psychiatry T32, University of Pittsburgh, 2012-2015</li>
 </ul>
-</div>
+<div style="clear:both;"></div></div>
 <div class="separator"></div><div class="section">
 <h2 id="projects" tabindex="-1">Projects</h2>
 <!-- TODO: a couple of additional studies -->
@@ -283,48 +311,158 @@ transcranial magnetic stimulation.</p>
 <p><a href="projects/csf-flow/">Measuring cerebral spinal fluid during sleep and wakefulness (CSF Flow Study)</a></p>
 </li>
 </ul>
-</div>
+<div style="clear:both;"></div></div>
 <div class="separator"></div><div class="section">
 <h2 id="people" tabindex="-1">People</h2>
 <!-- TODO: set width and style for all people -->
 <ul>
-<li><strong>Yue (Coco) Dong</strong> <p>I investigate the role of REM sleep and effects of sleep apnea on cognition.</p>
-<img src="img/coco.jpg" alt="coco.jpg" width="300px"></li>
-</ul>
-<!-- TODO: set width and style for all people -->
-<ul>
-<li><strong>Dr. Miranda Chappel-Farley</strong> <p>Dr. Miranda Chappel-Farley (she/her) is a postdoctoral scholar on the
-Translational Research Training in Sleep and Circadian Science
-T32. Her research focuses on uncovering underlying mechanisms by which
-health behaviors (i.e., sleep and physical activity) impact brain and
-cognitive function in older adulthood. The goal of this work is to
-inform and develop more targeted mechanistic interventions to prevent
-cognitive decline and Alzheimer’s disease.</p>
-<img src="img/miranda.png" alt="miranda.png" width="300px"></li>
-</ul>
-<!-- TODO: set width and style for all people -->
-<ul>
-<li><strong>Rima Habte</strong> <p>Leads study coordination for the ALPS study and she also leads
-everything related to sleep for the other study, I don't know what it
-is called to the participants.</p>
-<img src="img/RimaHabte_Profile_680.jpg" alt="RimaHabte_Profile_680.jpg" width="300px"></li>
-</ul>
+<li>
+<p><strong>Yue (Coco) Dong</strong></p>
+<div class="right">
+<p><img src="img/coco.jpg" alt="coco.jpg" width="300px"></p>
 </div>
+<p>Investigates the role of REM sleep and effects of sleep apnea on cognition.</p>
+<div style="clear:both;"></div>
+</li>
+</ul>
+<!-- TODO: set width and style for all people -->
+<ul>
+<li>
+<p><strong>Dr. Miranda Chappel-Farley</strong></p>
+<div class="right">
+<p><img src="img/miranda.png" alt="miranda.png" width="300px"></p>
+</div>
+<p>Dr. Miranda Chappel-Farley (she/her) is a postdoctoral scholar on the Translational Research Training in Sleep and Circadian Science T32. Her research focuses on uncovering underlying mechanisms by which health behaviors (i.e., sleep and physical activity) impact brain and cognitive function in older adulthood. The goal of this work is to inform and develop more targeted mechanistic interventions to prevent cognitive decline and Alzheimer’s disease.</p>
+<div style="clear:both;"></div>
+</li>
+</ul>
+<!-- TODO: set width and style for all people -->
+<ul>
+<li>
+<p><strong>Rima Habte</strong></p>
+<div class="right">
+<p><img src="img/RimaHabte_Profile_680.jpg" alt="RimaHabte_Profile_680.jpg" width="300px"></p>
+</div>
+<p>Leads study coordination for the ALPS study and she also leads everything related to sleep for the other study, I don't know what it is called to the participants.</p>
+<div style="clear:both;"></div>
+</li>
+</ul>
+<div style="clear:both;"></div></div>
 <div class="separator"></div><div class="section">
 <h2 id="publications" tabindex="-1">Publications</h2>
-<!-- TODO: full list of publications, ideally in a table -->
+<div class="publications">
 <ul>
 <li>
-<p>KA Wilckens, KI Erickson, ME Wheeler <u>Physical activity and cognition: a mediating role of efficient sleep</u> <em>Behavioral sleep medicine 16 (6), 569-586	122</em> 2018</p>
+<p>KR Sewell, AM Collins, LE Oberlin, MG Chappel‐Farley, H Huang, ... <u>Physical activity may mitigate sleep‐related cognitive deficits in older adults: Findings from the IGNITE study</u> <em>Alzheimer's &amp; dementia: translational research &amp; clinical interventions 11 …</em> 2025</p>
 </li>
 <li>
-<p>KA Wilckens, SG Woo, AR Kirk, KI Erickson, ME Wheeler <u>Role of sleep continuity and total sleep time in executive function across the adult lifespan.</u> <em>Psychology and aging 29 (3), 658	199</em> 2014</p>
+<p>M Stepan, A Mayeli, A Whitehead, C Peng, R Habte, K Sharma, ... <u>0110 Repetitive Transcranial Magnetic Stimulation Enhances Slow-Wave Activity and Response Speed in Older Adults</u> <em>Sleep 48 (Supplement_1), A50-A50</em> 2025</p>
 </li>
 <li>
-<p>KA Wilckens, CM Stillman, AM Waiwood, C Kang, RL Leckie, JC Peven, ... <u>Exercise interventions preserve hippocampal volume: A meta‐analysis</u> <em>Hippocampus 31 (3), 335-347	123</em> 2021</p>
+<p>Y Dong, K Wilckens, F Luyster, M Gratton, D Mazzotti, P Scott, J Lingler, ... <u>0611 Sleep-Disordered Breathing During Rapid Eye Movement Sleep Is Associated with Subjective Cognitive Decline</u> <em>Sleep 48 (Supplement_1), A267-A267</em> 2025</p>
+</li>
+<li>
+<p>V Krishnamurthy, K Wilckens, P Garbioglu, S Vaidya, S Swanger, ... <u>Effect of CPAP on Cognitive Fog in Post COVID Patients with Obstructive Sleep Apnea</u> <em>SLEEP 48, A606-A606</em> 2025</p>
+</li>
+<li>
+<p>KR Sewell, AM Collins, MG Chappel-Farley, S Jain, H Huang, G Grove, ... <u>Self-report and actigraphy measures of sleep and domain-specific cognitive performance in older adults</u> <em>GeroScience, 1-12</em> 2025</p>
+</li>
+<li>
+<p>HM Lehrer, X Zeng, KA Wilckens, RT Krafty, DJ Buysse, TK Karikari <u>Effects of sleep deprivation and recovery sleep on serum biomarkers of Alzheimer's disease in retired night shift workers and retired day workers</u> <em>Sleep Medicine 115, S3-S4</em> 2024</p>
+</li>
+<li>
+<p>M Lehrer, X Zeng, K Wilckens, R Krafty, D Buysse, T Karikari <u>EFFECTS OF SLEEP DEPRIVATION AND RECOVERY SLEEP ON SERUM BIOMARKERS OF ALZHEIMER'S DISEASE IN RETIRED ADULTS</u> <em>PSYCHOSOMATIC MEDICINE 86 (5), A153-A153</em> 2024</p>
+</li>
+<li>
+<p>B de Almeida, TA Martins, M Wu, KA Wilckens, DS Minhas, JW Ibinson, ... <u>Characterization of pulsations in the brain and cerebrospinal fluid using ultra‐high field magnetic resonance imaging</u> <em>Alzheimer's &amp; Dementia 20, e094107</em> 2024</p>
+</li>
+<li>
+<p>B de Almeida, TA Martins, M Wu, KA Wilckens, DS Minhas, JW Ibinson, ... <u>Alzheimer's Imaging Consortium</u> <em>Alzheimer's &amp; dementia: the journal of the Alzheimer's Association 20, e094107</em> 2024</p>
+</li>
+<li>
+<p>KA Wilckens, RF Habte, Y Dong, ME Stepan, KM Dessa, AB Whitehead, ... <u>A pilot time-in-bed restriction intervention behaviorally enhances slow-wave activity in older adults</u> <em>Frontiers in sleep 2, 1265006</em> 2024</p>
+</li>
+<li>
+<p>T Martins, B De Almeida, M Wu, KA Wilckens, D Minhas, JW Ibinson, ... <u>Characterization of pulsations in the brain and cerebrospinal fluid using ultra-high field magnetic resonance imaging</u> <em>Frontiers in Neuroscience 18, 1305939</em> 2024</p>
+</li>
+<li>
+<p>KA Wilckens, A Mayeli, ME Stepan, CW Peng, RF Habte, K Sharma, ... <u>High frequency transcranial magnetic stimulation increases slow-wave activity during subsequent sleep in older adults with cognitive complaints</u> <em>Brain Stimulation: Basic, Translational, and Clinical Research in …</em> 2024</p>
+</li>
+<li>
+<p>BN Chin, HM Lehrer, EL Tracy, E Barinas-Mitchell, KA Wilckens, ... <u>Cardiometabolic function in retired night shift workers and retired day workers</u> <em>Scientific reports 13 (1), 5204</em> 2023</p>
+</li>
+<li>
+<p>EM Wickwire, AC Verceles, S Chen, Z Zhao, VE Rogers, KA Wilckens, ... <u>Smart phone/ecological momentary assessment of sleep and daytime symptoms among older adults with insomnia</u> <em>The American Journal of Geriatric Psychiatry 31 (5), 372-378</em> 2023</p>
+</li>
+<li>
+<p>EJ Carlson, KA Wilckens, ME Wheeler <u>The interactive role of sleep and circadian rhythms in episodic memory in older adults</u> <em>The Journals of Gerontology: Series A 78 (10), 1844-1852</em> 2023</p>
+</li>
+<li>
+<p>KA Wilckens, B Jeon, JL Morris, DJ Buysse, ER Chasens <u>Effects of continuous positive airway pressure treatment on sleep architecture in adults with obstructive sleep apnea and type 2 diabetes</u> <em>Frontiers in Human Neuroscience 16, 924069</em> 2022</p>
+</li>
+<li>
+<p>JP Adornetti, CE Wade, MK Deeley, AC Verceles, JF Collen, VF Capaldi, ... <u>Remote clinical research operations during COVID-19: lessons learned and recommendations</u> <em>Sleep 45 (7), zsac124</em> 2022</p>
+</li>
+<li>
+<p>ME Stepan, KA Wilckens, D Hostler, ML Wallace, PL Franzen <u>Physical exertion partially mitigates task-switching deficits from sleep loss: Implications for firefighters</u> <em>Journal of occupational and environmental medicine 64 (10), e622-e628</em> 2022</p>
+</li>
+<li>
+<p>EL Tracy, J Zhang, K Wilckens, RT Krafty, BP Hasler, MH Hall, DJ Buysse <u>Homeostatic response to sleep deprivation and circadian rhythmicity are intact in older adults with insomnia</u> <em>Sleep 45 (9), zsac162</em> 2022</p>
+</li>
+<li>
+<p>KA Wilckens, CM Stillman, AM Waiwood, C Kang, RL Leckie, JC Peven, ... <u>Exercise interventions preserve hippocampal volume: A meta‐analysis</u> <em>Hippocampus 31 (3), 335-347</em> 2021</p>
+</li>
+<li>
+<p>KA Wilckens, LM Chahine <u>Sleep and circadian rhythms in the treatment, trajectory, and prevention of neurodegenerative disease</u> <em>Neurobiology of disease 145, 105075</em> 2020</p>
+</li>
+<li>
+<p>KA Wilckens, CE Kline, MA Bowman, RC Brindle, MR Cribbet, JF Thayer, ... <u>Does objectively-assessed sleep moderate the association between history of major depressive disorder and task-switching?</u> <em>Journal of affective disorders 265, 216-223</em> 2020</p>
+</li>
+<li>
+<p>SE Hogan, GM Delgado, MH Hall, VL Nimgaonkar, A Germain, DJ Buysse, ... <u>Slow-oscillation activity is reduced and high frequency activity is elevated in older adults with insomnia</u> <em>Journal of Clinical Sleep Medicine 16 (9), 1445-1454</em> 2020</p>
+</li>
+<li>
+<p>KM Meshreky, J Wood, KV Chowdari, MH Hall, KA Wilckens, R Yolken, ... <u>Infection with Herpes Simplex virus type 1 (HSV-1) and sleep: The dog that did not bark</u> <em>Psychiatry research 280, 112502</em> 2019</p>
+</li>
+<li>
+<p>KA Wilckens, DL Tudorascu, BE Snitz, JC Price, HJ Aizenstein, OL Lopez, ... <u>Sleep moderates the relationship between amyloid beta and memory recall</u> <em>Neurobiology of aging 71, 142-148</em> 2018</p>
+</li>
+<li>
+<p>KA Wilckens, KI Erickson, ME Wheeler <u>Physical activity and cognition: a mediating role of efficient sleep</u> <em>Behavioral sleep medicine 16 (6), 569-586</em> 2018</p>
+</li>
+<li>
+<p>KA Wilckens, F Ferrarelli, MP Walker, DJ Buysse <u>Slow-wave activity enhancement to improve cognition</u> <em>Trends in neurosciences 41 (7), 470-482</em> 2018</p>
+</li>
+<li>
+<p>KA Wilckens, MH Hall, KI Erickson, A Germain, VL Nimgaonkar, TH Monk, ... <u>Task switching in older adults with and without insomnia</u> <em>Sleep medicine 30, 113-120</em> 2017</p>
+</li>
+<li>
+<p>KA Wilckens, HJ Aizenstein, EA Nofzinger, JA James, BP Hasler, ... <u>The role of non‐rapid eye movement slow‐wave activity in prefrontal metabolism across young and middle‐aged adults</u> <em>Journal of sleep research 25 (3), 296-306</em> 2016</p>
+</li>
+<li>
+<p>KA Wilckens, MH Hall, RD Nebes, TH Monk, DJ Buysse <u>Changes in cognitive performance are associated with changes in sleep in older adults with insomnia</u> <em>Behavioral sleep medicine 14 (3), 295-310</em> 2016</p>
+</li>
+<li>
+<p>DB Kay, HT Karim, AM Soehner, BP Hasler, KA Wilckens, JA James, ... <u>Sleep-wake differences in relative regional cerebral metabolic rate for glucose among patients with insomnia compared with good sleepers</u> <em>Sleep 39 (10), 1779-1794</em> 2016</p>
+</li>
+<li>
+<p>D Leben, K Wilckens <u>Pushing the intuitions behind moral internalism</u> <em>Philosophical psychology 28 (4), 510-528</em> 2015</p>
+</li>
+<li>
+<p>KA Wilckens, SG Woo, KI Erickson, ME Wheeler <u>Sleep continuity and total sleep time are associated with task‐switching and preparation in young and older adults</u> <em>Journal of Sleep Research 23 (5), 508-516</em> 2014</p>
+</li>
+<li>
+<p>KA Wilckens <u>The role of sleep and physical activity in cognitive decline: Direct and mediating effects on executive control</u> <em>University of Pittsburgh</em> 2012</p>
+</li>
+<li>
+<p>KA Wilckens, KI Erickson, ME Wheeler <u>Age‐related decline in controlled retrieval: the role of the PFC and sleep</u> <em>Neural plasticity 2012 (1), 624795</em> 2012</p>
+</li>
+<li>
+<p>KA Wilckens, JJ Tremel, DA Wolk, ME Wheeler <u>Effects of task-set adoption on ERP correlates of controlled and automatic recognition memory</u> <em>NeuroImage 55 (3), 1384-1392</em> 2011</p>
 </li>
 </ul>
 </div>
+<div style="clear:both;"></div></div>
 
       </div>
 
@@ -376,8 +514,11 @@ published in the Journal of Sleep Research.
     
 
     <div class="footer">
-        <!-- TODO: Footer text. -->
-        <p>Footer</p>
+        <p>
+Contact: Dr. Kristine Wilckens - <a href="mailto:krw37@pitt.edu">krw37@pitt.edu</a><br>
+3811 O’Hara Street, Room E-1124<br>
+Pittsburgh, PA 15213
+</p>
     </div>
     <script>
         // Get the photo carousel element
