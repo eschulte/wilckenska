@@ -1,6 +1,19 @@
 ---
 title: The SPA Lab
 subtitle: Dr. Kristine Wilckens
+photos:
+  - src: ./img/lab-photos/IMG_0426.jpeg
+    alt: poster
+  - src: ./img/lab-photos/IMG_0677.jpeg
+    alt: group
+  - src: ./img/lab-photos/IMG_1104.jpeg
+    alt: mask
+  - src: ./img/lab-photos/IMG_4769.jpeg
+    alt: patio
+  - src: ./img/lab-photos/IMG_5662.jpeg
+    alt: haloween
+  - src: ./img/lab-photos/IMG_8913.jpeg
+    alt: Ethan
 ---
 
 ::: section

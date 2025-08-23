@@ -162,12 +162,56 @@
             color: #555;
         }
 
+        /* Photo Carousel Styles */
+        .photo-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px 0;
+            margin: 20px auto;
+            scrollbar-width: none;
+        }
+        .photo-carousel:hover {
+            scrollbar-width: thin;
+            scrollbar-color: #2f5970 #cce0ff;
+        }
+        
+        .photo-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .photo-carousel::-webkit-scrollbar:hover {
+            height: 8px;
+        }
+        
+        .photo-carousel::-webkit-scrollbar-thumb {
+            background-color: #2f5970;
+            border-radius: 10px;
+        }
+        
+        .photo-carousel::-webkit-scrollbar-track {
+            background: #cce0ff;
+        }
+
+        .photo-carousel img {
+            flex-shrink: 0;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo-carousel img:hover {
+            transform: scale(1.05);
+        }
+
         /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
             background-color: #cce0ff;
-            border-top: 1px solid #aaddff;
         }
 
         /* Responsive Design */
@@ -204,6 +248,7 @@
         {{ content }}
       </div>
 
+      {% if news %}
       <aside class="news-scroller">
           <h3>News</h3>
           {% for item in news %}
@@ -213,10 +258,58 @@
           </div>
           {% endfor %}
       </aside>
+      {% endif %}
     </div>
 
+    {% if photos %}
+    <div class="photo-carousel">
+        {% for photo in photos %}
+        <a href="{{ photo.src | url }}"><img src="{{ photo.src | url }}" alt="{{ photo.alt }} photo"></a>
+        {% endfor %}
+        {% for photo in photos %}
+        <a href="{{ photo.src | url }}"><img src="{{ photo.src | url }}" alt="{{ photo.alt }} photo"></a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="footer">
+        <!-- TODO: Footer text. -->
         <p>Footer</p>
     </div>
+    <script>
+        // Get the photo carousel element
+        const carousel = document.querySelector('.photo-carousel');
+        let scrollSpeed = 3; // Adjust the scroll speed as needed
+        let scrollInterval;
+        let halfWidth;
+
+        // Function to start automatic scrolling
+        function startScrolling() {
+            // Get the width of the carousel's content
+            halfWidth = carousel.scrollWidth / 2;
+            scrollInterval = setInterval(() => {
+                // Check if the carousel has scrolled past the first set of images
+                if (carousel.scrollLeft >= halfWidth) {
+                    // Instantly reset the scroll position to the start of the second set
+                    carousel.scrollLeft = 0;
+                } else {
+                    // Increment the scroll position
+                    carousel.scrollLeft += scrollSpeed;
+                }
+            }, 10); // Check every 10 milliseconds
+        }
+
+        // Function to stop automatic scrolling
+        function stopScrolling() {
+            clearInterval(scrollInterval);
+        }
+
+        // Start scrolling when the page loads
+        window.addEventListener('load', startScrolling);
+
+        // Add event listeners to pause on hover and resume on mouse out
+        carousel.addEventListener('mouseenter', stopScrolling);
+        carousel.addEventListener('mouseleave', startScrolling);
+    </script>
 </body>
 </html>
