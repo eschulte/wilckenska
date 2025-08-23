@@ -238,9 +238,9 @@
     </a>
 
     <nav class="menu-bar">
-        <a href="#link1">Sub-heading 1</a>
-        <a href="#link2">Sub-heading 2</a>
-        <a href="#link3">Sub-heading 3</a>
+        {% for link in links %}
+          <a href="{{ link.link }}">{{ link.name }}</a>
+        {% endfor %}
     </nav>
 
     <div class="outside-container">
@@ -248,10 +248,10 @@
         {{ content }}
       </div>
 
-      {% if news %}
+      {% if collections.news and show_news %}
       <aside class="news-scroller">
           <h3>News</h3>
-          {% for item in news %}
+          {% for item in collections.news %}
           <div class="news-item">
               <h4>{{ item.data.title }}</h4>
               <p>{{ item.content }}</p>
@@ -262,7 +262,7 @@
     </div>
 
     {% if photos %}
-    <div class="photo-carousel">
+    <div class="photo-carousel" id="photos">
         {% for photo in photos %}
         <a href="{{ photo.src | url }}"><img src="{{ photo.src | url }}" alt="{{ photo.alt }} photo"></a>
         {% endfor %}

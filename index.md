@@ -1,6 +1,16 @@
 ---
 title: The SPA Lab
 subtitle: Dr. Kristine Wilckens
+show_news: True
+links:
+  - name: Projects
+    link: "#projects"
+  - name: People
+    link: "#people"
+  - name: Publications
+    link: "#publications"
+  - name: Photos
+    link: "#photos"
 photos:
   - src: ./img/lab-photos/IMG_0426.jpeg
     alt: poster
@@ -30,6 +40,7 @@ transcranial magnetic stimulation.
 
 <!-- ![Face]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}) -->
 
+
 ### Education & Training
 
 - BA, Psychology, Rutgers University, Douglass College, 2006
@@ -55,7 +66,7 @@ transcranial magnetic stimulation.
 {% for person in collections.person %}
 
 <!-- TODO: set width and style for all people -->
-- **{{ person.data.title }}** {{ person.content }}  ![{{ person.data.photo }}](./img/{{ person.data.photo }})
+- **{{ person.data.title }}** {{ person.content }}  ![{{ person.data.photo }}](./img/{{ person.data.photo }}){ width=300px }
 
 {% endfor %}
 
@@ -71,16 +82,3 @@ transcranial magnetic stimulation.
 {% endfor %}
 
 :::
-
-<!-- 
-## News
-
-TODO: News in a sidebar with title, link, summary: off in a sidebar
-
-{% for news in collections.news %}
-
-- [{{ news.data.title }}]({{ news.url }})
-
-{% endfor %}
-
--->

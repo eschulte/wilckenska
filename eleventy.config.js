@@ -2,6 +2,8 @@ import { HtmlBasePlugin } from "@11ty/eleventy";
 import relativeLinks from "./_config/relative-links.js";
 import markdownIt from 'markdown-it';
 import markdownItContainer from 'markdown-it-container';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItAttrs from 'markdown-it-attrs';
 
 export default async function (eleventyConfig) {
 
@@ -23,7 +25,9 @@ export default async function (eleventyConfig) {
       return '</div>\n';
     }
   }
-});;
+  })
+        .use(markdownItAnchor)
+        .use(markdownItAttrs);;
 
   eleventyConfig.setLibrary("md", md);
 

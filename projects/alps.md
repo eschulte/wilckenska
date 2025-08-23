@@ -1,6 +1,9 @@
 ---
 title: "Alzheimer's Sleep Pathways Sleep Study (ALPS)"
 tags: project
+links:
+  - name: Home
+    link: "/"
 ---
 
 ::: section
