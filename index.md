@@ -5,23 +5,29 @@ title: Dr. Kristine Wilckens PhD
 ::: section
 ## Dr. Wilckens
 
-Dr. Kristine Wilckens is a Pellentesque dapibus suscipit ligula.
-Donec posuere augue in quam.  Etiam vel tortor sodales tellus
-ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis
-blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu,
-wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at
-dui in ligula mollis ultricies.  Integer placerat tristique nisl.
-Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus
-semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.
-Nullam libero mauris, consequat quis, varius et, dictum id, arcu.
-Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.
-Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
-purus, et dictum nunc justo sit amet elit.
+Dr. Wilckens investigates the role of sleep in promoting brain health
+and cognitive fitness. Her research program focuses on 1) neural
+processes during sleep that restore cognitive function and mitigate
+neurodegeneration and 2) sleep enhancement interventions that improve
+functioning of brain networks and mitigate cognitive impairments and
+progression of Alzheimer’s disease. Sleep enhancement methods include
+behavioral interventions and laboratory-based techniques such as
+transcranial magnetic stimulation.
+
+<!-- ![Face]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}) -->
+
+### Education & Training
+
+- BA, Psychology, Rutgers University, Douglass College, 2006
+- MA, Cognitive and Bio Psychology, New York University, 2008
+- PhD, Cognitive Psychology, University of Pittsburgh, 2012
+- Postdoctoral Fellowship, Geriatric Psychiatry T32, University of Pittsburgh, 2012-2015
 
 :::
 ::: section
 ## Projects
 
+<!-- TODO: a couple of additional studies -->
 {% for project in collections.project %}
 
 - [{{ project.data.title }}]({{ project.url }})
@@ -34,7 +40,8 @@ purus, et dictum nunc justo sit amet elit.
 
 {% for person in collections.person %}
 
-- **{{ person.data.title }}** {{ person.content }}
+<!-- TODO: set width and style for all people -->
+- **{{ person.data.title }}** {{ person.content }}  ![{{ person.data.photo }}](./img/{{ person.data.photo }})
 
 {% endfor %}
 
@@ -42,6 +49,7 @@ purus, et dictum nunc justo sit amet elit.
 ::: section
 ## Publications
 
+<!-- TODO: full list of publications, ideally in a table -->
 {% for pub in collections.publication %}
 
 - {{ pub.data.author }} <u>{{ pub.data.title }}</u> *{{ pub.data.publisher }}* {{ pub.data.year }}
@@ -49,3 +57,16 @@ purus, et dictum nunc justo sit amet elit.
 {% endfor %}
 
 :::
+
+<!-- 
+## News
+
+TODO: News in a sidebar with title, link, summary: off in a sidebar
+
+{% for news in collections.news %}
+
+- [{{ news.data.title }}]({{ news.url }})
+
+{% endfor %}
+
+-->
