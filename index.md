@@ -1,5 +1,6 @@
 ---
-title: Dr. Kristine Wilckens PhD
+title: The SPA Lab
+subtitle: Dr. Kristine Wilckens
 ---
 
 ::: section
