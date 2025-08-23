@@ -26,14 +26,12 @@ photos:
     alt: Ethan
 ---
 
-::: section
+:::: section
 ## Dr. Wilckens
 
-<div style="float:right;">
-
-![Face]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}){ width=400px }
-
-</div>
+::: right
+![Dr. Kristine Wilckens]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}){ width=300px }
+:::
 
 Dr. Wilckens investigates the role of sleep in promoting brain health
 and cognitive fitness. Her research program focuses on 1) neural
@@ -51,8 +49,8 @@ transcranial magnetic stimulation.
 - PhD, Cognitive Psychology, University of Pittsburgh, 2012
 - Postdoctoral Fellowship, Geriatric Psychiatry T32, University of Pittsburgh, 2012-2015
 
-:::
-::: section
+::::
+:::: section
 ## Projects
 
 <!-- TODO: a couple of additional studies -->
@@ -62,26 +60,34 @@ transcranial magnetic stimulation.
 
 {% endfor %}
 
-:::
-::: section
+::::
+:::: section
 ## People
 
 {% for person in collections.person %}
 
 <!-- TODO: set width and style for all people -->
-- **{{ person.data.title }}** {{ person.content }}  ![{{ person.data.photo }}](./img/{{ person.data.photo }}){ width=300px }
+-   **{{ person.data.title }}**
+    ::: right
+    ![{{ person.data.photo }}](./img/{{ person.data.photo }}){ width=300px }
+    :::
+    {{ person.content }}
+
+    <div style="clear:both;"></div>
 
 {% endfor %}
 
-:::
-::: section
+::::
+:::: section
 ## Publications
 
-<!-- TODO: full list of publications, ideally in a table -->
-{% for pub in collections.publication %}
+::: publications
+{% assign sorted_pubs = publications | sort: 'year' | reverse %}
+{% for pub in sorted_pubs %}
 
-- {{ pub.data.author }} <u>{{ pub.data.title }}</u> *{{ pub.data.publisher }}* {{ pub.data.year }}
+- {{ pub.author }} <u>{{ pub.title }}</u> *{{ pub.publisher }}* {{ pub.year }}
 
 {% endfor %}
-
 :::
+
+::::

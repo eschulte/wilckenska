@@ -22,6 +22,26 @@ export default async function (eleventyConfig) {
       return '<div class="separator"></div><div class="section">\n';
     } else {
       // closing tag
+      return '<div style="clear:both;"></div></div>\n';
+    }
+  }
+  }).use(markdownItContainer, 'right', {
+  render: function (tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+      // opening tag
+      return '<div class="right">\n';
+    } else {
+      // closing tag
+      return '</div>\n';
+    }
+  }
+  }).use(markdownItContainer, 'publications', {
+  render: function (tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+      // opening tag
+      return '<div class="publications">\n';
+    } else {
+      // closing tag
       return '</div>\n';
     }
   }
