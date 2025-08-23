@@ -29,6 +29,12 @@ photos:
 ::: section
 ## Dr. Wilckens
 
+<div style="float:right;">
+
+![Face]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}){ width=400px }
+
+</div>
+
 Dr. Wilckens investigates the role of sleep in promoting brain health
 and cognitive fitness. Her research program focuses on 1) neural
 processes during sleep that restore cognitive function and mitigate
@@ -37,9 +43,6 @@ functioning of brain networks and mitigate cognitive impairments and
 progression of Alzheimer’s disease. Sleep enhancement methods include
 behavioral interventions and laboratory-based techniques such as
 transcranial magnetic stimulation.
-
-<!-- ![Face]({{'./img/WilckensKristine_Psychiatry2019.jpg' | url }}) -->
-
 
 ### Education & Training
 
